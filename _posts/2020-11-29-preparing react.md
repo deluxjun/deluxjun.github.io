@@ -1,24 +1,46 @@
 ---
-title: Writing a markdown
-tags: markdown github
+title: Preparing react dev
+categories: [Frontend]
+tags: react typescript
 ---
 
-You can refer to this page to write markdown(md) text.
+Prepare react development
 
 ---
 
-# Markdown grammer
+# vscode extensions
+- Prettier
+- Bookmarks
+- ES7 React/Redux/GraphQL/React-Native snippets
+- Bracket Pair Colorizer 2
+- Import Cost
 
-## • Headers
+# Commands 
+- init/create project
+  ```
+  $ npm i create-react-app
+  $ npx create-react-app manager
+  $ cd manager
+  ```
+- typescript setting   
+  Rename App.js -> App.tsx   
+  'npm start' detect automatically ts file
+  ```
+  $ npm i typescript @types/node @types/react @types/react-dom
+  $ npm i redux redux-thunk redux-devtools-extension @types/react-redux bulma
+  $ npm start
+  ```
 
-```
-#
-##
-###
-####
-#####
-######
-```
+# install i18n
+- install packages
+  ```
+  npm install i18next
+  npm install react-i18next
+  ```
+
+
+
+# References
 
 ## • Code
 
@@ -31,28 +53,6 @@ You can refer to this page to write markdown(md) text.
       This is a code block.
 
 - use ```
-
-## • List
-
-```
-1. list1
-2. list2
-3. list3
-```
-
-1. list1
-2. list2
-3. list3
-
-```
-* list1
-  - list2
-    + list3
-```
-
-- list1
-  - list2
-    - list3
 
 ## • Link
 
@@ -104,19 +104,6 @@ external link : <http://www.google.com>
 
 email link : <deluxjun@gmail.com>
 
-## horizontal bar
-
-```
-* * *
-***
----
-```
-
----
-
----
-
----
 
 ## emphasis
 
