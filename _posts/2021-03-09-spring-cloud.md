@@ -29,3 +29,39 @@ I'll create a module in Intellij Idea
   ```
   http://localhost:9191/h2-console  
   password : none
+
+# add eureka service
+
+# cloud-gateway service
+- application.yml
+  ```
+  server:
+  port: 8989
+
+  spring:
+    application:
+      name: GATEWAY-SERVICE
+    cloud:
+      gateway:
+        routes:
+          - id: auth-service
+            uri: lb://AUTH-SERVICE
+            predicates:
+              - Path=/auth/**
+          - id: portal-service
+            uri: lb://PORTAL-SERVICE
+            predicates:
+              - Path=/sbp/**
+
+  eureka:
+    client:
+      register-with-eureka: true
+      fetch-registry: true
+      service-url:
+        defaultZone: http://localhost:8761/eureka/
+    instance:
+      hostname: localhost
+
+  ```
+- Note: Gateway is not compatible with org.springframework.boot:spring-boot-starter-web  
+Related error message: Spring-cloud-gateway application not starting up.
